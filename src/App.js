@@ -4,9 +4,12 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Header from './components/header';
-import Users from './components/users';
-import Earls from './components/earls';
+import './styles.css';
+
+import Header from './components/Header';
+
+import Users from './screens/Users';
+import Earls from './screens/Earls';
 
 function App() {
   return (

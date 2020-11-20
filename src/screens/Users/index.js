@@ -1,5 +1,5 @@
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-import User from '../user';
+import User from '../../components/User';
 
 const Users = () => {
   const match = useRouteMatch();
