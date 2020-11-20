@@ -1,10 +1,11 @@
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch, Link } from "react-router-dom";
 import { useState } from "react";
 
 import { fetchAll } from '../../api';
 
 import EarlList from '../../components/EarlList';
 import EarlDetails from "../../components/EarlDetails";
+import EarlForm from '../../components/EarlForm';
 
 const Earls = () => {
   const match = useRouteMatch();
@@ -20,8 +21,11 @@ const Earls = () => {
   return (
     <div>
       <h2>Earls</h2>
-
+      <Link to="/earls/create">Create EARL</Link>
       <Switch>
+        <Route path={`${match.path}/create`}>
+          <EarlForm />
+        </Route>
         <Route path={`${match.path}/:earlId`}>
           <EarlDetails />
         </Route>
