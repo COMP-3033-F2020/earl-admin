@@ -1,6 +1,7 @@
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-import axios from 'axios';
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { useState } from "react";
+
+import { fetchAll } from '../../api';
 
 import EarlList from '../../components/EarlList';
 import EarlDetails from "../../components/EarlDetails";
@@ -10,9 +11,10 @@ const Earls = () => {
   const [earls, setEarls] = useState([]);
 
   if (earls.length === 0) {
-    axios.get('http://localhost:3001/earls').then(({ data }) => {
+    fetchAll().then(data => {
       setEarls(data);
     });
+    
   }
 
   return (

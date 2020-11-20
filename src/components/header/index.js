@@ -1,21 +1,27 @@
-import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Header = () => (
   <header>
-    <h1>Earl Admin</h1>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/earls">EARLS</Link>
-        </li>
-        <li>
-          <Link to="/users">Users</Link>
-        </li>
-      </ul>
-    </nav>
+    <Navbar>
+      <Navbar.Brand href="#">
+        Earl Admin
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="earl-navbar" />
+      <Navbar.Collapse id="earl-navbar">
+        <Nav>
+          <LinkContainer to="/">
+            <Nav.Link>Home</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/earls">
+            <Nav.Link>EARLS</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/users">
+            <Nav.Link>Users</Nav.Link>
+          </LinkContainer>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   </header>
 );
 

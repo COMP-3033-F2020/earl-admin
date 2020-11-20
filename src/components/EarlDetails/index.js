@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
-import { Link, useParams, useRouteMatch } from "react-router-dom";
-import axios from 'axios';
+import { Link, useParams } from "react-router-dom";
+import { fetchById } from '../../api';
 
 const EarlDetails = (props) => {
   const { earlId } = useParams();
   const [earl, setEarl] = useState(null);
   
   if (!earl) {
-    axios.get(`http://localhost:3001/earls/${earlId}`).then(({ data }) => {
+    fetchById(earlId).then(data => {
       setEarl(data);
     });
   }
   
   return (
+    earl ?
     <div>
       Details for: { earl.target }
-    </div>
+    </div> : null
   );
 }
 

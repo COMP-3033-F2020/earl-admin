@@ -15,7 +15,7 @@ import Earls from './screens/Earls';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="container">
         <Header />
         <main>
           <Switch>
