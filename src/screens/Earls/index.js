@@ -1,21 +1,34 @@
-import { Switch, Route, useRouteMatch, Link } from "react-router-dom";
-import { useState } from "react";
+import {
+  Switch,
+  Route,
+  useRouteMatch,
+  Link,
+  useHistory,
+} from 'react-router-dom';
+import { useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 import { fetchAll } from '../../api';
 
 import EarlList from '../../components/EarlList';
-import EarlDetails from "../../components/EarlDetails";
+import EarlDetails from '../../components/EarlDetails';
 import EarlForm from '../../components/EarlForm';
 
 const Earls = () => {
+  const [cookies] = useCookies();
   const match = useRouteMatch();
   const [earls, setEarls] = useState([]);
+  const history = useHistory();
+
+  if (!cookies.jwt) {
+    history.push('/login');
+    return null;
+  }
 
   if (earls.length === 0) {
-    fetchAll().then(data => {
+    fetchAll().then((data) => {
       setEarls(data);
     });
-    
   }
 
   return (
@@ -35,6 +48,6 @@ const Earls = () => {
       </Switch>
     </div>
   );
-}
+};
 
 export default Earls;

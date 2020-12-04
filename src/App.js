@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -11,6 +7,7 @@ import Header from './components/Header';
 
 import Users from './screens/Users';
 import Earls from './screens/Earls';
+import Login from './screens/Login';
 
 function App() {
   return (
@@ -19,6 +16,9 @@ function App() {
         <Header />
         <main>
           <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
             <Route path="/users">
               <Users />
             </Route>
