@@ -1,5 +1,5 @@
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-import User from '../../components/User';
+import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import User from '../../Components/User';
 
 const Users = () => {
   const match = useRouteMatch();
@@ -16,25 +16,19 @@ const Users = () => {
           <h3>Select a user</h3>
           <ul>
             <li>
-              <Link to={`${match.path}/1`}>
-                User 1
-              </Link>
+              <Link to={`${match.path}/1`}>User 1</Link>
             </li>
             <li>
-              <Link to={`${match.path}/2`}>
-                User 2
-              </Link>
+              <Link to={`${match.path}/2`}>User 2</Link>
             </li>
             <li>
-              <Link to={`${match.path}/3`}>
-                User 3
-              </Link>
+              <Link to={`${match.path}/3`}>User 3</Link>
             </li>
           </ul>
         </Route>
       </Switch>
     </div>
   );
-}
+};
 
 export default Users;
