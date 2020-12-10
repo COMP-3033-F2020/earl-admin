@@ -10,9 +10,9 @@ import { useCookies } from 'react-cookie';
 
 import { fetchAll } from '../../api';
 
-import EarlList from '../../Components/EarlList';
-import EarlDetails from '../../Components/EarlDetails';
-import EarlForm from '../../Components/EarlForm';
+import EarlList from '../../components/EarlList';
+import EarlDetails from '../../components/EarlDetails';
+import EarlForm from '../../components/EarlForm';
 
 const Earls = () => {
   const [cookies] = useCookies();

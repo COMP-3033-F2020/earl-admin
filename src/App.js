@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-import Header from './Components/Header';
+import Header from './components/Header';
 
 import Users from './screens/Users';
 import Earls from './screens/Earls';
